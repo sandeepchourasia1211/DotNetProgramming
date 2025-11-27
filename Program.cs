@@ -1,6 +1,7 @@
 ﻿using TopAskedQues.ArmStrongNumberCheck;
 using TopAskedQues.CheckAnyOddDigit;
 using TopAskedQues.CheckOnlyEvenDigit;
+using TopAskedQues.N_PrimeNumber;
 using TopAskedQues.NeonCheck;
 using TopAskedQues.NumberReverse;
 using TopAskedQues.PalindromeNumberCheck;
@@ -30,7 +31,7 @@ namespace TopAskedQues
                 Console.WriteLine("Option 9 : Check the Given No is ArmStrong Or Not");
                 Console.WriteLine("Option 10 :Print N Prime Number");
                 Console.WriteLine("Option 11 :Print Nth Prime Number");
-                Console.WriteLine("Option 12 :Sum of each digit untill getting Single digit");
+                Console.WriteLine("Option 12 :Sum of each digit until getting Single digit");
                 Console.WriteLine("Option 13 : Check the Given No is Happy Number Or Not");
                 Console.WriteLine("Option 14 : Print Nearest Prime");
                 Console.WriteLine("------------------------------");
@@ -77,7 +78,7 @@ namespace TopAskedQues
                 }
                 else if (option == 10)
                 {
-                    
+                    printN_Prime();
                 }
                 else if (option == 11)
                 {
@@ -111,6 +112,15 @@ namespace TopAskedQues
 
             } while (repeat);
 
+        }
+
+        private static void printN_Prime()
+        {
+            Console.Write("Enter The Times to Print Prime Number : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            NPrime nP = new NPrime();
+            nP.nPrime(num);
         }
 
         private static void printArmStrong()
