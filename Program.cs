@@ -1,4 +1,5 @@
-﻿using TopAskedQues.CheckAnyOddDigit;
+﻿using TopAskedQues.ArmStrongNumberCheck;
+using TopAskedQues.CheckAnyOddDigit;
 using TopAskedQues.CheckOnlyEvenDigit;
 using TopAskedQues.NeonCheck;
 using TopAskedQues.NumberReverse;
@@ -72,7 +73,7 @@ namespace TopAskedQues
                 }
                 else if (option == 9)
                 {
-                  
+                    printArmStrong();
                 }
                 else if (option == 10)
                 {
@@ -110,6 +111,20 @@ namespace TopAskedQues
 
             } while (repeat);
 
+        }
+
+        private static void printArmStrong()
+        {
+            Console.WriteLine("Enter The Number to Check Armstrong : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            ArmStrongNumber armStrongNumber=new ArmStrongNumber();
+            bool res=armStrongNumber.isArmStrong(num);
+
+            if (res)
+                Console.WriteLine($"The {num} is ArmStrong Number");
+            else
+                Console.WriteLine($"The {num} is Not ArmStrong Number");
         }
 
         private static void printOddorNot()
