@@ -1,4 +1,5 @@
-﻿using TopAskedQues.CheckOnlyEvenDigit;
+﻿using TopAskedQues.CheckAnyOddDigit;
+using TopAskedQues.CheckOnlyEvenDigit;
 using TopAskedQues.NeonCheck;
 using TopAskedQues.NumberReverse;
 using TopAskedQues.PalindromeNumberCheck;
@@ -67,7 +68,7 @@ namespace TopAskedQues
                 }
                 else if (option == 8)
                 {
-                   
+                   printOddorNot();
                 }
                 else if (option == 9)
                 {
@@ -109,6 +110,20 @@ namespace TopAskedQues
 
             } while (repeat);
 
+        }
+
+        private static void printOddorNot()
+        {
+            Console.WriteLine("Enter The Number to Check If Any Odd Digit present : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            OddDigit oddDigit=new OddDigit();
+            bool res=oddDigit.isOddDigit(num);
+
+            if (res)
+                Console.WriteLine($"The {num} Contains Odd Digits");
+            else
+                Console.WriteLine($"The {num} does not Contains any Odd Digits");
         }
 
         private static void printEvenOrNot()

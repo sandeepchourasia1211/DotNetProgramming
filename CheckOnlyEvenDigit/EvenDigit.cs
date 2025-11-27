@@ -15,7 +15,7 @@ namespace TopAskedQues.CheckOnlyEvenDigit
         {
             while(num>0)
             {
-                //231
+                
                 int temp = num % 10;
                 if (temp % 2 != 0)
                     return false;
