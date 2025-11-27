@@ -1,5 +1,6 @@
 ﻿using TopAskedQues.NeonCheck;
 using TopAskedQues.SpyNumberCheck;
+using TopAskedQues.SumOfOddPrime;
 
 namespace TopAskedQues
 {
@@ -42,8 +43,7 @@ namespace TopAskedQues
                 }
                 else if (option == 3)
                 {
-               
-
+                    printPrime();
                 }
                 else if (option == 4)
                 {
@@ -105,6 +105,15 @@ namespace TopAskedQues
 
             } while (repeat);
 
+        }
+
+        private static void printPrime()
+        {
+            Console.WriteLine("Enter The Number to Check Prime : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            PrimeOfSum primeOfSum = new PrimeOfSum();
+            primeOfSum.sumOfOdd(num);
         }
 
         private static void printNeon()
