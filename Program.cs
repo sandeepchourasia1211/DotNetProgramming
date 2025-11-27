@@ -1,4 +1,5 @@
-﻿using TopAskedQues.NeonCheck;
+﻿using TopAskedQues.CheckOnlyEvenDigit;
+using TopAskedQues.NeonCheck;
 using TopAskedQues.NumberReverse;
 using TopAskedQues.PalindromeNumberCheck;
 using TopAskedQues.SpyNumberCheck;
@@ -62,7 +63,7 @@ namespace TopAskedQues
                 }
                 else if (option == 7)
                 {
-                    
+                    printEvenOrNot();   
                 }
                 else if (option == 8)
                 {
@@ -107,6 +108,22 @@ namespace TopAskedQues
                 Console.WriteLine();
 
             } while (repeat);
+
+        }
+
+        private static void printEvenOrNot()
+        {
+
+            Console.WriteLine("Enter The Number to Check If Only Even Digit present : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            EvenDigit evenDigit = new EvenDigit();
+            bool res=evenDigit.isEven(num);
+
+            if (res)
+                Console.WriteLine($"The {num} Contains only Even Digits");
+            else
+                Console.WriteLine($"The {num} does not Contains only Even Digits");
 
         }
 
