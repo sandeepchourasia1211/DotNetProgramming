@@ -1,5 +1,6 @@
 ﻿using TopAskedQues.NeonCheck;
 using TopAskedQues.NumberReverse;
+using TopAskedQues.PalindromeNumberCheck;
 using TopAskedQues.SpyNumberCheck;
 using TopAskedQues.StrongNumberCheck;
 using TopAskedQues.SumOfOddPrime;
@@ -57,7 +58,7 @@ namespace TopAskedQues
                 }
                 else if (option == 6)
                 {
-                    
+                    printPalindrome();
                 }
                 else if (option == 7)
                 {
@@ -107,6 +108,20 @@ namespace TopAskedQues
 
             } while (repeat);
 
+        }
+
+        private static void printPalindrome()
+        {
+            Console.WriteLine("Enter The Number to Check Palindrome : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            PalindromeNumber palindromeNumber = new PalindromeNumber();
+            bool res=palindromeNumber.isPalindrome(num);
+
+            if (res)
+                Console.WriteLine($"The {num} is Palindrome Number");
+            else
+                Console.WriteLine($"The {num} is Not palindrome Number");
         }
 
         private static void printReverse()
