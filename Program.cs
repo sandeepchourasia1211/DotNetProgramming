@@ -1,5 +1,6 @@
 ﻿using TopAskedQues.NeonCheck;
 using TopAskedQues.SpyNumberCheck;
+using TopAskedQues.StrongNumberCheck;
 using TopAskedQues.SumOfOddPrime;
 
 namespace TopAskedQues
@@ -47,7 +48,7 @@ namespace TopAskedQues
                 }
                 else if (option == 4)
                 {
-                    
+                    printStrong();
                 }
                 else if (option == 5)
                 {
@@ -104,6 +105,21 @@ namespace TopAskedQues
                 Console.WriteLine();
 
             } while (repeat);
+
+        }
+
+        private static void printStrong()
+        {
+            Console.WriteLine("Enter The Number to Check Strong : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            StrongNumber strongNumber = new StrongNumber();
+            bool res=strongNumber.isStrong(num);
+
+            if(res)
+                Console.WriteLine($"The {num} is Strong Number");
+            else
+                Console.WriteLine($"The {num} is Not Strong Number");
 
         }
 
