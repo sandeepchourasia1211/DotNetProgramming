@@ -1,4 +1,5 @@
-﻿using TopAskedQues.SpyNumberCheck;
+﻿using TopAskedQues.NeonCheck;
+using TopAskedQues.SpyNumberCheck;
 
 namespace TopAskedQues
 {
@@ -37,7 +38,7 @@ namespace TopAskedQues
                 }
                 else if (option == 2)
                 {
-                    
+                    printNeon();
                 }
                 else if (option == 3)
                 {
@@ -103,6 +104,21 @@ namespace TopAskedQues
                 Console.WriteLine();
 
             } while (repeat);
+
+        }
+
+        private static void printNeon()
+        {
+            Console.WriteLine("Enter The Number to Check Neon : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            NeonNumber neonNumber = new NeonNumber();
+            bool res = neonNumber.isNeon(num);
+
+            if(res)
+                Console.WriteLine($"The {num} is Neon Number");
+            else
+                Console.WriteLine($"The {num} is Not Neon Number");
 
         }
 
