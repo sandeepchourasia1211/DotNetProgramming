@@ -3,6 +3,7 @@ using TopAskedQues.CheckAnyOddDigit;
 using TopAskedQues.CheckOnlyEvenDigit;
 using TopAskedQues.N_PrimeNumber;
 using TopAskedQues.NeonCheck;
+using TopAskedQues.Nth_Prime_Number;
 using TopAskedQues.NumberReverse;
 using TopAskedQues.PalindromeNumberCheck;
 using TopAskedQues.SpyNumberCheck;
@@ -82,6 +83,7 @@ namespace TopAskedQues
                 }
                 else if (option == 11)
                 {
+                    printNthPrime();
                   
                 }
                 else if (option == 12)
@@ -112,6 +114,18 @@ namespace TopAskedQues
 
             } while (repeat);
 
+        }
+
+        private static void printNthPrime()
+        {
+
+            Console.Write("Enter The Nth Times to Print Prime Number : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            NthPrimeNumber nthPrime = new NthPrimeNumber();
+            int res=nthPrime.getNthPrime(num);
+
+            Console.WriteLine($"The {num} place prime number is {res}");
         }
 
         private static void printN_Prime()
