@@ -1,4 +1,5 @@
 ﻿using TopAskedQues.NeonCheck;
+using TopAskedQues.NumberReverse;
 using TopAskedQues.SpyNumberCheck;
 using TopAskedQues.StrongNumberCheck;
 using TopAskedQues.SumOfOddPrime;
@@ -52,7 +53,7 @@ namespace TopAskedQues
                 }
                 else if (option == 5)
                 {
-                   
+                    printReverse();
                 }
                 else if (option == 6)
                 {
@@ -106,6 +107,16 @@ namespace TopAskedQues
 
             } while (repeat);
 
+        }
+
+        private static void printReverse()
+        {
+            Console.WriteLine("Enter The Number to Check Strong : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            ReverseNumber reverseNumber = new ReverseNumber();
+            int res= reverseNumber.reverse(num);
+            Console.WriteLine($"The reverse of {num} is {res}");
         }
 
         private static void printStrong()
