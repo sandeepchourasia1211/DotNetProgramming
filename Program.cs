@@ -3,6 +3,7 @@ using TopAskedQues.CheckAnyOddDigit;
 using TopAskedQues.CheckOnlyEvenDigit;
 using TopAskedQues.HappyNumberCheck;
 using TopAskedQues.N_PrimeNumber;
+using TopAskedQues.NearestPrimeNumber;
 using TopAskedQues.NeonCheck;
 using TopAskedQues.Nth_Prime_Number;
 using TopAskedQues.NumberReverse;
@@ -98,7 +99,7 @@ namespace TopAskedQues
                 }
                 else if (option == 14)
                 {
-                  
+                    printNearestPrime();
                 }
                 else
                 {
@@ -114,6 +115,17 @@ namespace TopAskedQues
                 Console.WriteLine();
 
             } while (repeat);
+
+        }
+
+        private static void printNearestPrime()
+        {
+            Console.Write("Enter The Number To get Nearest prime Number : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            NearestPrime nearest = new NearestPrime();
+            int res=nearest.nearestPrime(num);
+            Console.WriteLine($"The Nearest Prime of {num} is {res}");
 
         }
 
