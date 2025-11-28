@@ -8,6 +8,7 @@ using TopAskedQues.NumberReverse;
 using TopAskedQues.PalindromeNumberCheck;
 using TopAskedQues.SpyNumberCheck;
 using TopAskedQues.StrongNumberCheck;
+using TopAskedQues.SumDigitUntillSingle;
 using TopAskedQues.SumOfOddPrime;
 
 namespace TopAskedQues
@@ -17,7 +18,6 @@ namespace TopAskedQues
         static void Main(string[] args)
         {
             bool repeat;
-
             do
             {
                 Console.WriteLine("------------ MENU ------------");
@@ -88,7 +88,7 @@ namespace TopAskedQues
                 }
                 else if (option == 12)
                 {
-                   
+                    printSumOfDigit();
 
                 }
                 else if (option == 13)
@@ -114,6 +114,16 @@ namespace TopAskedQues
 
             } while (repeat);
 
+        }
+
+        private static void printSumOfDigit()
+        {
+            Console.Write("Enter The Number To Get Single Digit : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            UntillSingleDigit untillSingle=new UntillSingleDigit();
+            int res = untillSingle.sumOfDigit(num);
+            Console.WriteLine($"The Single digit of {num} is {res}");
         }
 
         private static void printNthPrime()
