@@ -1,6 +1,7 @@
 ﻿using TopAskedQues.ArmStrongNumberCheck;
 using TopAskedQues.CheckAnyOddDigit;
 using TopAskedQues.CheckOnlyEvenDigit;
+using TopAskedQues.HappyNumberCheck;
 using TopAskedQues.N_PrimeNumber;
 using TopAskedQues.NeonCheck;
 using TopAskedQues.Nth_Prime_Number;
@@ -93,7 +94,7 @@ namespace TopAskedQues
                 }
                 else if (option == 13)
                 {
-                  
+                    printHappyNum();
                 }
                 else if (option == 14)
                 {
@@ -114,6 +115,21 @@ namespace TopAskedQues
 
             } while (repeat);
 
+        }
+
+        private static void printHappyNum()
+        {
+
+            Console.Write("Enter The Number To check Happy Number : ");
+            int num = Convert.ToInt32(Console.ReadLine());
+
+            HappyNumber happy = new HappyNumber();
+            bool res=happy.isHappy(num);
+
+            if (res)
+                Console.WriteLine($"The {num} is Happy Number");
+            else
+                Console.WriteLine($"The {num} is Not Happy Number");
         }
 
         private static void printSumOfDigit()
